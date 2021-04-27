@@ -1,0 +1,17 @@
+The company had a good year, and so we want to give out some raises. We generally think that a good raise is 5% of a person’s salary. However, we don’t have an unlimited amount of money. There are only $25,000 dollars available in our raise budget, and that isn’t enough to give everybody a 5% raise, so we need to make some choices.
+
+Management has decided to give people 5% raises until the money runs out. Since there isn’t enough money available for everybody, we need a way to prioritize who gets the raises. Management determines that raises should be prioritized in salary order – the employees with the lowest salaries should get raises first. If two people have the same salary, they should be prioritized by their hire date, with employees who were hired first having higher priority.
+
+Write a procedure called AssignRaises that determines who will get raises. Your procedure should take the raise percentage (5% in our example above) and raise budget ($25,000 in our example above) as parameters, so that we can vary them when we need to. 
+
+The procedure should use a cursor to list the employees in the priority order described above. (Remember that you can use the ORDER BY clause in SQL to do this.) It will loop through the cursor and give raises to the employees using the RaiseSalary procedure you created in part 1. However, it needs to keep track of the declining budget, and not give more than $25,000 in raises. At a certain point, the remaining budget will have declined to the point that there is not enough money left to give the next person in the priority order a full 5% raise. When that happens, the procedure should stop giving raises at all, even if there is some money left in the raise budget.
+
+For each person who does not get a raise, the procedure should write a message to the HW1Log table in the following form:
+
+Not enough money left to give a raise to employee <employee id>.
+
+Your procedure should finish by printing out the following report.
+
+Number of employees who received raises: <put value here>
+Number of employees who did not receive raises: <put value here>
+Amount of money left unused in the raise budget: <put value here> 

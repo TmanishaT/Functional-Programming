@@ -1,0 +1,14 @@
+Calculate Raise Proc:
+Management is still investigating the issue of raises. They’re considering a new approach to raises where employees who make more than average salary get a 3% raise and employees who make an average or less than average salary get a 5% raise.
+
+Create a PL/SQL function called RaiseCalculator that will implement the above rule. The function will take a current salary as an argument and return the new raised salary (not the amount of the raise). 
+
+Raise Trigger:
+Management has now decided that no employee salary should ever be increased by more than $400 at a time, regardless of the percentage raise or the amount of money available. You have offered to change your RaiseSalary procedure and AssignRaises procedures (from Homework 1) to accommodate this limitation, but they are concerned about the possibility of rogue applications in the company bypassing your code and updating the tables with direct SQL. They want you to make sure that no single update can raise the salary by more than $400, regardless of which application it is requesting the change.
+
+Implement a trigger called RaiseGuard which fires on any UPDATE to the Salary column of MyEmployees and which assures that raises of more than $400 are converted to exactly $400. 
+
+Every time your trigger modifies a salary value, it should write a message to the HW2Log table in the following form:
+
+Salary update for employee <employee id> modified from <what salary would have been without trigger> to limit of <what salary is now after effects of trigger>.
+This new trigger will likely invalidate the calculations of your AssignRaises procedure concerning how much money is left in the raise budget.

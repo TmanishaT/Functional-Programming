@@ -1,0 +1,7 @@
+Create a stored procedure called RaiseSalary that accepts two parameters – an employee id and an integer raise percentage. The procedure will raise the salary of the specified employee by the specified percentage. It will do this by updating the Salary column in MyEmployees. Calling the procedure with an argument of 101 for the employee id and 20 for the raise percentage would raise that employee’s salary by 20 percent.
+
+Your procedure should include exception handling. It should have a generic error handler which prints out both the SQLERRM and the phrase “Encountered while trying to give employee <parameter value> a raise.” Of course, instead of <parameter value>, your error message should include the value of the employee id parameter that was passed into the procedure.
+
+Every time your procedure raises the salary of an employee, you should write a message to your HW1Log table in the following form:
+
+Employee <employee id> was raised by <raise percentage> percent. 
